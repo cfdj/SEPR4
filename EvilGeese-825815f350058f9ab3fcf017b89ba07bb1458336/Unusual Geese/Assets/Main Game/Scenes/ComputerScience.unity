@@ -215,7 +215,6 @@ GameObject:
   m_Component:
   - component: {fileID: 29697234}
   - component: {fileID: 29697232}
-  - component: {fileID: 29697235}
   m_Layer: 0
   m_Name: GoToInside
   m_TagString: Untagged
@@ -252,22 +251,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &29697235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 29697231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3861ca20ab9e8a644aad9e85868d50be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  x: 0
-  y: 1
-  gameVar: InsideCS
-  value: False
-  invert: 1
 --- !u!1 &430058756
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,7 +681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9399390be8dcfb4abc3036f8b4807ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _keys: fefffffffefffffffdffffff02000000fcffffff02000000fbffffff01000000fbffffff00000000fbfffffffffffffffcfffffffefffffffdfffffffefffffffffffffffeffffff00000000feffffff01000000feffffff02000000feffffff02000000fdffffff02000000fcffffff02000000fbffffff03000000faffffff04000000faffffff05000000faffffff05000000fdffffff05000000feffffff05000000ffffffff05000000000000000500000001000000040000000200000003000000020000000200000002000000feffffff02000000ffffffff010000000000000001000000010000000200000006000000fcffffff06000000fbffffff0000000000000000
+  _keys: fefffffffefffffffdffffff02000000fcffffff02000000fbffffff01000000fbffffff00000000fbfffffffffffffffcfffffffefffffffdfffffffefffffffffffffffeffffff00000000feffffff01000000feffffff02000000feffffff02000000fdffffff02000000fcffffff02000000fbffffff03000000faffffff04000000faffffff05000000faffffff05000000fdffffff05000000feffffff05000000ffffffff05000000000000000500000001000000040000000200000003000000020000000200000002000000feffffff02000000ffffffff010000000000000001000000010000000200000006000000fcffffff06000000fbffffff000000000000000003000000feffffff04000000feffffff
   _positions:
   - x: -2
     y: -2
@@ -865,6 +848,16 @@ MonoBehaviour:
     interactionObject: {fileID: 0}
     stepOn: {fileID: 1252911247}
     blocked: 0
+  - x: 3
+    y: -2
+    interactionObject: {fileID: 1300854298}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 4
+    y: -2
+    interactionObject: {fileID: 1300854298}
+    stepOn: {fileID: 0}
+    blocked: 1
 --- !u!114 &1208672788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -940,6 +933,7 @@ MonoBehaviour:
   - dialog2
   - dialog3
   - dialog2b
+  - intro
   dialogDataValues:
   - speekerName: The Narrator
     dialogText: You and your friends wake up outside the Computer Science building.
@@ -992,7 +986,7 @@ MonoBehaviour:
     optionDescription:
     - Continue
     optionPointer:
-    - 
+    - intro
     optionConditional:
     - rightSideComparable: 2
       leftSideComparable: 2
@@ -1036,6 +1030,23 @@ MonoBehaviour:
       itemAmount: 0
       character: 0
       charAvailible: 0
+  - speekerName: Narrator
+    dialogText: Welcome to the world of York, Magic and Monsters run freely and you
+      and your party of fighters must venture forth, use the esc key to get the menu
+      and R for Roster
+    optionDescription:
+    - ok
+    optionPointer:
+    - 
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    actions: []
 --- !u!4 &1252911250
 Transform:
   m_ObjectHideFlags: 0
@@ -1205,6 +1216,212 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
+--- !u!1 &1300854298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1300854305}
+  - component: {fileID: 1300854304}
+  - component: {fileID: 1300854303}
+  - component: {fileID: 1300854302}
+  - component: {fileID: 1300854301}
+  - component: {fileID: 1300854300}
+  - component: {fileID: 1300854299}
+  m_Layer: 0
+  m_Name: G1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1300854299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1300854298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6976a059de7d1541969c6681fba7c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSelectorVarName: Gor
+  dialogDataKeys:
+  - start
+  - next
+  dialogDataValues:
+  - speekerName: Narrator
+    dialogText: A Gorilla! Its the vice chancelors old pet he's abandoned it and now
+      its looking fro revenfe
+    optionDescription:
+    - I'll take him
+    optionPointer:
+    - next
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    actions:
+    - ownActionType: 4
+      gameVarName: 
+      gameVarValue: 
+      gameVarNumber: 0
+      combatEnemies: 
+      itemType: 0
+      itemAmount: 0
+      character: 11
+      charAvailible: 1
+  - speekerName: Narrator
+    dialogText: Gorilla has joined your party, to look at and cahnge characters press
+      R
+    optionDescription:
+    - Ok
+    optionPointer:
+    - 
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    actions:
+    - ownActionType: 0
+      gameVarName: GorillaGone
+      gameVarValue: True
+      gameVarNumber: 0
+      combatEnemies: 
+      itemType: 0
+      itemAmount: 0
+      character: 0
+      charAvailible: 0
+--- !u!114 &1300854300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1300854298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba05fd0888f34e4f8360c77ec524234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownInteractionType: 1
+  enemies: 
+  sceneName: 
+  playerX: 0
+  playerY: 0
+--- !u!114 &1300854301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1300854298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c3afab324e1c9948b1b1db5313ae561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameVariable: GorillaGone
+  Values:
+  - True
+--- !u!114 &1300854302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1300854298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3861ca20ab9e8a644aad9e85868d50be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 4
+  y: -2
+  gameVar: GorillaGone
+  value: False
+  invert: 0
+--- !u!114 &1300854303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1300854298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3861ca20ab9e8a644aad9e85868d50be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 3
+  y: -2
+  gameVar: GorillaGone
+  value: False
+  invert: 0
+--- !u!212 &1300854304
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1300854298}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 1623435185
+  m_SortingLayer: 3
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 8c204c5c11c01f9459cf02b7fa189b47, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1.25}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!4 &1300854305
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1300854298}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.5, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1429383850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,7 +1453,7 @@ MonoBehaviour:
   x: 0
   y: 1
   gameVar: InsideCS
-  value: true
+  value: False
   invert: 0
 --- !u!114 &1429383852
 MonoBehaviour:
@@ -1252,7 +1469,7 @@ MonoBehaviour:
   x: -1
   y: 1
   gameVar: InsideCS
-  value: true
+  value: False
   invert: 0
 --- !u!4 &1429383853
 Transform:

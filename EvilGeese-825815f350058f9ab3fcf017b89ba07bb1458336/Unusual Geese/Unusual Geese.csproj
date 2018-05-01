@@ -269,6 +269,7 @@
     <Compile Include="Assets\Main Game\Unit tests\DialogSystemTests.cs" />
     <Compile Include="Assets\Main Game\Unit tests\GameStateTests.cs" />
     <Compile Include="Assets\Main Game\Unit tests\GoosyKongTests.cs" />
+    <Compile Include="Assets\Main Game\Unit tests\GorillaTest.cs" />
     <Compile Include="Assets\Main Game\Unit tests\GridSystemTests.cs" />
     <Compile Include="Assets\Main Game\WorldInteraction.cs" />
     <Compile Include="Assets\Main Game\WorldMap\WorldMapButton.cs" />

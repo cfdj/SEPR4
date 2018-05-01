@@ -379,8 +379,10 @@ public class CombatManager : MonoBehaviour {
 		}
 	}
 
-	//called in update() if the current stage is the target selection stage
-	void targetSelectionStage(){
+    //called in update() if the current stage is the target selection stage
+    /// <summary>
+    /// [EXTENSION Un-Two] Gorrila check added for target selection to allow randomisation for the gorilla
+    void targetSelectionStage(){
 		selectorRen.enabled = false;
 		hideAbilities ();
 		if (attackTargets == null) {
